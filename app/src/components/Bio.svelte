@@ -6,8 +6,8 @@ import {  HeartHandshake, LifeBuoy, Rainbow, ShieldEllipsis } from 'lucide-svelt
 <ul class="list text-center ">
 
 	<li class="p-2">
-		<div class="h3">
-			<span class="bg-gradient-to-br from-red-500 to-yellow-500 bg-clip-text text-transparent box-decoration-clone">
+		<div class="h3 md:h2">
+			<span>
 				All functions of Tetrahedron.gay are opt-in and
 			only limited by the efficacy of our mutual aid.  Give your time and attention freely, it will be reciprocated.
 </span>
