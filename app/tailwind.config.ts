@@ -2,7 +2,7 @@ import { join } from 'path'
 import type { Config } from 'tailwindcss'
 import typography from '@tailwindcss/typography';
 import { skeleton } from '@skeletonlabs/tw-plugin'
-import { myCustomTheme } from './my-custom-theme'
+import { tetrahTheme } from './tetrah-theme';
 
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}', join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')],
@@ -14,7 +14,7 @@ export default {
 		skeleton({
 			themes: {
 				custom: [
-					myCustomTheme
+					tetrahTheme
 				]
 			},
 		}),

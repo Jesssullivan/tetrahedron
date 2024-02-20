@@ -1,7 +1,7 @@
 import type { CustomThemeConfig } from '@skeletonlabs/tw-plugin';
 
-export const myCustomTheme: CustomThemeConfig = {
-	name: 'my-custom-theme',
+export const tetrahTheme: CustomThemeConfig = {
+	name: 'tetrah-theme',
 	properties: {
 		// =~= Theme Properties =~=
 		"--theme-font-family-base": `system-ui`,
