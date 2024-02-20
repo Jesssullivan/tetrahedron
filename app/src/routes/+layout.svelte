@@ -165,7 +165,7 @@
 				<div class="btn-group p-2">
 					<a href="https://www.transscendsurvival.org/"><Rss size="{16}"/></a>
 					<a href="https://hrihospital.com/programs-services/outpatient-services/partial-hospitalization-php/triangle-program-lgbtq/" class=""><AmbulanceIcon size="{16}" /></a>
-					<a href="https://github.com/jesssullivan" class=""><Github size="16" /></a>
+					<a href="https://github.com/jesssullivan/tetrahedron" class=""><Github size="16" /></a>
 					<button><LightSwitch /></button>
 				</div>
 
