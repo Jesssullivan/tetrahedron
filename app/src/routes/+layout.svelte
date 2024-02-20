@@ -23,7 +23,6 @@
 	import {  getDrawerStore } from '@skeletonlabs/skeleton';
 	import { menuDrawerSettings, loginDrawerSettings } from '$lib/util';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
-	import CatMouseTracker from '$lib/components/CatMouseTracker.svelte';
 	import Footer from '../components/Footer.svelte';
 
 	initializeStores();
