@@ -17,8 +17,7 @@ export function getCookie(cname: string): boolean {
 }
 
 export function CookieModal(
-	fn: { trigger: (arg0: ModalSettings) => void },
-	slug: string): Promise<boolean> {
+	fn: { trigger: (arg0: ModalSettings) => void }): Promise<boolean> {
 	return new Promise<boolean>((resolve, reject) => {
 		// !
 		if (!getCookie('Tetrah')) {

@@ -1,78 +1,56 @@
 <script lang="ts">
-
 	import { Modal } from '@skeletonlabs/skeleton';
-
 	import { initializeStores } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
 	import { CookieModal } from '$lib/components/CookieModal';
 	import { getModalStore } from '@skeletonlabs/skeleton';
-	import { init, promise, pictures, slug } from '$lib/store';
-
-
-
-	import '../app.postcss';
+	import { init, promise, slug } from '$lib/store';
 	import { AppShell, AppBar, Avatar } from '@skeletonlabs/skeleton';
 	import { AppRail, AppRailAnchor, Drawer } from '@skeletonlabs/skeleton';
+	import '../app.postcss';
 	import { page } from '$app/stores';
 	import {
-		AlignJustify,
+		AlignJustify, AmbulanceIcon,
 		Baby,
-		BookHeart, Boxes,
-		CalendarCheck2, Cross,
-		Facebook, Github,
+		Boxes,
+		CalendarCheck2,
+		Cross,
+		Github,
 		HomeIcon,
-		Instagram,
-		Linkedin,
-		Map, Megaphone, Rss,
-		Star,
-		Stethoscope
+		Megaphone,
+		Rss
 	} from 'lucide-svelte';
 	import {  getDrawerStore } from '@skeletonlabs/skeleton';
-	import { acuityDrawerSettings, contactDrawerSettings } from '$lib/util';
+	import { menuDrawerSettings, loginDrawerSettings } from '$lib/util';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
 	import CatMouseTracker from '$lib/components/CatMouseTracker.svelte';
-	import Calendar from '../components/Calendar.svelte';
+	import Footer from '../components/Footer.svelte';
 
 	initializeStores();
 
 	const drawerStore = getDrawerStore();
-
-	export const openAcuity = () => drawerStore.open(acuityDrawerSettings);
-	export const openContact = () => drawerStore.open(contactDrawerSettings);
-
-	export const createLoadObserver = (handler: () => void) => {
-		let waiting = 0
-
-		return (el: { addEventListener: (arg0: string, arg1: () => void) => void }) => {
-			waiting++
-			el.addEventListener('load', () => {
-				waiting--
-				if (waiting === 0) {
-					handler()
-				}
-			})
-		}
-	}
+	export const openMenu = () => drawerStore.open(menuDrawerSettings);
+	export const openLogin = () => drawerStore.open(loginDrawerSettings);
 
 	let currentTile: number = 0;
 
 	export const modalStore = getModalStore();
 
-	let tiggerState: Promise<boolean>;
-
+	let cookieState: Promise<boolean> ;
 
 	onMount(() => {
 		$slug = window.location.pathname === '/' ? 'tigger' : window.location.pathname.slice(1);
-		tiggerState = CookieModal(modalStore, $slug);
-		$promise.then((p) => {
-			$pictures = p;
+		cookieState = CookieModal(modalStore);
+		$promise.then(() => {
 			$init = true;
 		});
 	});
 
 </script>
+
+
 <Drawer class="w-20%" regionDrawer="overflow-y-hidden">
-	{#if $drawerStore.id === 'Acuity'}
+	{#if $drawerStore.id === 'menu'}
 		<AppRail background="bg-transparent" regionDefault="overscroll-y-none	overflow-hidden">
 			<svelte:fragment slot="lead">
 				<a href="#~">
@@ -148,7 +126,7 @@
 				</AppRailAnchor>
 			</a>
 			<svelte:fragment slot="trail">
-				<AppRailAnchor on:click={openContact} title="Account">
+				<AppRailAnchor on:click={openLogin} title="Account">
 					<svelte:fragment slot="lead">
 						<span><Baby /></span>
 					</svelte:fragment>
@@ -156,7 +134,7 @@
 				</AppRailAnchor>
 			</svelte:fragment>
 		</AppRail>
-	{:else if $drawerStore.id === 'Contact'}
+	{:else if $drawerStore.id === 'login'}
 		<div>
 			<div class="h5 text-center justify-center items-center p-2">
 				Admin section, login and other such features are Undah construction UwU </div>
@@ -175,7 +153,7 @@
 		<!-- App Bar -->
 		<AppBar background="bg-transparent" shadow="shadow-xl" >
 			<svelte:fragment slot="lead">
-				<a href="#~" on:click={openAcuity}>
+				<a href="#~" on:click={openMenu}>
 					<strong class="invisible absolute md:visible md:relative uppercase h4">Tetrahedron.gay</strong>
 					<p class="md:invisible md:absolute text-xl bg-transparent">
 						<AlignJustify size={48} strokeWidth={2.5} />
@@ -187,7 +165,7 @@
 			<svelte:fragment slot="trail">
 				<div class="btn-group p-2">
 					<a href="https://www.transscendsurvival.org/"><Rss size="{16}"/></a>
-					<a href="https://hrihospital.com/programs-services/outpatient-services/partial-hospitalization-php/triangle-program-lgbtq/" class=""><Cross size="{16}" /></a>
+					<a href="https://hrihospital.com/programs-services/outpatient-services/partial-hospitalization-php/triangle-program-lgbtq/" class=""><AmbulanceIcon size="{16}" /></a>
 					<a href="https://github.com/jesssullivan" class=""><Github size="16" /></a>
 					<button><LightSwitch /></button>
 				</div>
@@ -272,7 +250,7 @@
 					</AppRailAnchor>
 				</a>
 				<svelte:fragment slot="trail">
-					<AppRailAnchor on:click={openContact} title="Account">
+					<AppRailAnchor on:click={openLogin} title="Account">
 						<svelte:fragment slot="lead">
 							<span><Baby /></span>
 						</svelte:fragment>
@@ -285,14 +263,15 @@
 	<!-- (sidebarRight) -->
 	<!-- (pageHeader) -->
 	<!-- Router Slot -->
-	{#await tiggerState}
-<!--		<div style="height: 100%; background-image: url('Tetrahedron.gif');"></div>-->
+	{#await cookieState}
+		<div style="height: 100%; background-image: url('Tetrahedron.gif');"></div>
 	{:then uwu}
 		<h1 class="hidden">{uwu}</h1>
 		<div>
+
 			{#await $promise}
-<!--				<div style="height: 100%; background-image: url('Tetrahedron.gif');"></div>-->
-			{:then $pictures}
+				<div style="height: 100%; background-image: url('Tetrahedron.gif');"></div>
+			{:then $init}
 				<slot/>
 			{:catch error}
 				<p>{error}</p>
@@ -304,7 +283,7 @@
 
 	<!-- ---- / ---- -->
 	<svelte:fragment slot="pageFooter">
-
+		<Footer/>
 	</svelte:fragment>
 	<!-- (footer) -->
 </AppShell>

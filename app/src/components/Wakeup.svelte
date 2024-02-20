@@ -1,20 +1,11 @@
 <script>
-	import { Accordion, AccordionItem, AppRailAnchor, getDrawerStore } from '@skeletonlabs/skeleton';
-	import {
-		BookOpenCheck,
-		CalendarCheck2,
-		FileCheck,
-		HeartHandshake,
-		LineChart,
-		LocateFixed,
-		Rocket,
-		Route
-	} from 'lucide-svelte';
+	import { Accordion, AccordionItem, getDrawerStore } from '@skeletonlabs/skeleton';
+	import { BookOpenCheck } from 'lucide-svelte';
 
-	import { acuityDrawerSettings } from '$lib/util';
+	import { menuDrawerSettings } from '$lib/util';
 
 	const drawerStore = getDrawerStore();
-	const openAcuity = () => drawerStore.open(acuityDrawerSettings);
+	const openMenu = () => drawerStore.open(menuDrawerSettings);
 
 </script>
 
@@ -28,67 +19,69 @@
 	</h1>
 </div>
 
-
-<div class="flex mb-2 rounded-lg">
-<div class="w-3/5 text-center mx-auto p-2 card-hover rounded-xl">
-	<span class="flex-auto">
+<p class="flex-auto m-4">
 					We host a daily wakeup call at ~8:30 every day via Discord.
 					Any member with the ‘wakeup-call’ discord roll is empowered to initiate, join and call
 					(and- if needed- delegate further wakeup calls, via an means necessary-
 					phone call, discord, email, DMs, doordash coffee delivery to your peer,
 					knock on their door, call their neighbors etc)
-	</span>
-	<Accordion>
-		<AccordionItem>
-			<svelte:fragment slot="lead"><BookOpenCheck /></svelte:fragment>
-			<svelte:fragment slot="summary"><h1 class=" bg-gradient-to-br from-blue-500 to-cyan-300 bg-clip-text text-transparent box-decoration-clone h2">Wakeup Check-in Items</h1></svelte:fragment>
-			<svelte:fragment slot="content">
-				<ul class="list text-left">
-					<li>
-						<span>&#8594;</span>
-						<span>What you are getting up today</span>
-					</li>
-					<li>
-						<span>&#8594;</span>
-						<span>Brush your teefers, eat brefus, drink coffee etc</span>
-					</li>
-					<li>
-						<span class="h3">What you need <i>therapeutically</i> today:</span>
-					</li>
-					<ul>
+	</p>
+
+<div class="flex mb-2 rounded-lg">
+
+	<div class="w-3/5 text-center mx-auto p-2 card-hover rounded-xl">
+		<Accordion >
+			<AccordionItem>
+				<svelte:fragment slot="lead"><BookOpenCheck /></svelte:fragment>
+				<svelte:fragment slot="summary"><h1 class=" bg-gradient-to-br from-blue-500 to-cyan-300 bg-clip-text text-transparent box-decoration-clone h2">Wakeup Check-in Items</h1></svelte:fragment>
+				<svelte:fragment slot="content">
+					<ul class="list text-left">
 						<li>
-							<span>&#10239;</span>
-							<span>Group time or an ear to talk, explain, vent</span>
+							<span>&#8594;</span>
+							<span>What you are getting up today</span>
 						</li>
 						<li>
-							<span>&#10239;</span>
-							<span>A sounding board to talk and scheme</span>
+							<span>&#8594;</span>
+							<span>Brush your teefers, eat brefus, drink coffee etc</span>
 						</li>
 						<li>
-							<span>&#10239;</span>
-							<span>Logistical help, organizational support</span>
+							<span class="h3">What you need <i>therapeutically</i> today:</span>
 						</li>
-						<li>
-							<span>&#10239;</span>
-							<span>A hug, a friendly visit, a safety buddy</span>
-						</li>
-						<li>
-							<span>&#10239;</span>
-							<span>Someone hang out in VC or over the phone</span>
-						</li>
-						<li>
-							<span>&#10239;</span>
-							<span>A walk, a gym buddy etc</span>
-						</li>
+						<ul>
+							<li>
+								<span>&#10239;</span>
+								<span>Group time or an ear to talk, explain, vent</span>
+							</li>
+							<li>
+								<span>&#10239;</span>
+								<span>A sounding board to talk and scheme</span>
+							</li>
+							<li>
+								<span>&#10239;</span>
+								<span>Logistical help, organizational support</span>
+							</li>
+							<li>
+								<span>&#10239;</span>
+								<span>A hug, a friendly visit, a safety buddy</span>
+							</li>
+							<li>
+								<span>&#10239;</span>
+								<span>Someone hang out in VC or over the phone</span>
+							</li>
+							<li>
+								<span>&#10239;</span>
+								<span>A walk, a gym buddy etc</span>
+							</li>
+						</ul>
 					</ul>
-				</ul>
-			</svelte:fragment>
-		</AccordionItem>
-	</Accordion>
+				</svelte:fragment>
+			</AccordionItem>
+		</Accordion>
+
 
 </div>
 <div class="w-2/5 text-center mx-auto p-2 block card-hover rounded-xl">
-	<Accordion>
+	<Accordion >
 		<AccordionItem>
 			<svelte:fragment slot="lead"><BookOpenCheck /></svelte:fragment>
 			<svelte:fragment slot="summary">@TODO: Wakeup Features</svelte:fragment>

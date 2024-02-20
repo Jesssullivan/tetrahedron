@@ -1,6 +1,6 @@
 <script>
-import { Avatar } from '@skeletonlabs/skeleton';
 import {  HeartHandshake, LifeBuoy, Rainbow, ShieldEllipsis } from 'lucide-svelte';
+import Discord from './Discord.svelte';
 </script>
 
 <ul class="list text-center ">
@@ -19,27 +19,39 @@ import {  HeartHandshake, LifeBuoy, Rainbow, ShieldEllipsis } from 'lucide-svelt
 	<li class="p-2 justify-center drop-shadow-md" >
 		<span class="invisible absolute md:visible md:relative"><Rainbow size="{144}"/></span>
 			<span>
-							Tetrahedron.gay is a mutual aid mental health group informally continuing and expanding upon the structured partial hospitalization program the Triangle Program.
+							Tetrahedron.gay is an informal mental health group continuing and expanding upon the structured partial hospitalization program the Triangle Program.
  </span>
 	</li>
-	<h2 class="h1">
-		<span class="bg-gradient-to-br from-blue-500 to-cyan-300 bg-clip-text text-transparent box-decoration-clone">
+	<hr class="!border-t-2 p-4" />
 
-			By joining, you agree to:
+	<h1 class="h1 p-6"><a href="https://discord.gg/uCkAuUpu9Y">Click to join our Discord:</a></h1>
+
+	<div class="flex">
+
+		<div class="w-1/2 mx-auto">
+			<h2 class="h2 p-2">
+		<span class="bg-gradient-to-br from-blue-500 to-cyan-300 bg-clip-text text-transparent box-decoration-clone">
+			<a href="https://discord.gg/uCkAuUpu9Y">By joining, you agree to:</a>
 		</span>
-	</h2>
+			</h2>
+		</div>
+		<span class="divider-vertical h-20" />
+		<div class="w-1/2">
+			<Discord/>
+		</div>
+	</div>
 	<ul class="list p-4 text-left">
-		<li class="hover:animate-pulse p-4 drop-shadow-2xl bg-gradient-to-br from-secondary-200 to-primary-400 box-decoration-clone">
+		<li class="hover:animate-ping p-4 drop-shadow-2xl bg-gradient-to-br from-secondary-200 to-primary-400 box-decoration-clone">
 			<span><LifeBuoy size="{36}" /></span>
 			<span class="flex-auto">Ask for help when you need it</span>
 		</li>
-		<li  class="hover:animate-pulse  p-4 bg-gradient-to-br from-primary-400 to-secondary-200 box-decoration-clone">
+		<li  class="hover:animate-ping  p-4 bg-gradient-to-br from-primary-400 to-secondary-200 box-decoration-clone">
 			<span><HeartHandshake size="{36}"/></span>
 			<span class="flex-auto">Proactively and freely offer your ear,
 				time, empathy, effort and capabilities (transportation, resources, logistical bandwidth)
 				as you are willing and able</span>
 		</li>
-		<li  class="hover:animate-pulse o p-4 bg-gradient-to-br from-primary-200 to-secondary-300 box-decoration-clone">
+		<li  class="hover:animate-ping o p-4 bg-gradient-to-br from-primary-200 to-secondary-300 box-decoration-clone">
 			<span><ShieldEllipsis size="{36}" /></span>
 			<span class="flex-auto ">Retain responsibility of your personal information and protect your physical and emotional safety viciously</span>
 		</li>
