@@ -1,6 +1,0 @@
-<div class="flex mb-2 place-items-center backdrop-opacity-25 rounded-lg">
-	<iframe class="invisible absolute md:relative md:visible"
-					src="https://calendar.google.com/calendar/embed?height=400&wkst=2&ctz=America%2FNew_York&bgcolor=%23B39DDB&showTitle=0&mode=WEEK&showTz=0&showCalendars=0&showPrint=0&showTabs=0&src=YWRtaW5AdGV0cmFoZWRyb24uZ2F5&src=Y184YzA5YTBkZGViMDkyZGFlMjJhN2MxYjVlOWIxMzkwOTZlNDJhN2EyNDMwODZhNjkyNjA5M2I5OTA1OWU2NmVlQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%23E4C441" style="border-width:0" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
-	<iframe class="visible relative md:invisible md:absolute"
-					src="https://calendar.google.com/calendar/embed?height=400&wkst=1&ctz=America%2FNew_York&bgcolor=%23ffffff&showTitle=0&showDate=0&showTabs=0&showPrint=0&showCalendars=0&mode=AGENDA&src=YWRtaW5AdGV0cmFoZWRyb24uZ2F5&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=Y184YzA5YTBkZGViMDkyZGFlMjJhN2MxYjVlOWIxMzkwOTZlNDJhN2EyNDMwODZhNjkyNjA5M2I5OTA1OWU2NmVlQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%2333B679&color=%23E4C441&color=%230B8043" style="border-width:0" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
-</div>

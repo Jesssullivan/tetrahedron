@@ -39,7 +39,6 @@ declare module '$env/static/private' {
 	export const SHLVL: string;
 	export const HOME: string;
 	export const CONDA_SHLVL: string;
-	export const OLDPWD: string;
 	export const npm_package_devDependencies__typescript_eslint_parser: string;
 	export const DESKTOP_SESSION: string;
 	export const NVM_BIN: string;
@@ -188,7 +187,6 @@ declare module '$env/dynamic/private' {
 		SHLVL: string;
 		HOME: string;
 		CONDA_SHLVL: string;
-		OLDPWD: string;
 		npm_package_devDependencies__typescript_eslint_parser: string;
 		DESKTOP_SESSION: string;
 		NVM_BIN: string;

@@ -23,8 +23,8 @@ export function CookieModal(
 		if (!getCookie('Tetrah')) {
 			const modal: ModalSettings = {
 				type: 'confirm',
-				buttonTextCancel: 'To Triangle',
-				buttonTextConfirm: 'To Tetrahedron',
+				buttonTextCancel: 'To Tetrahedron',
+				buttonTextConfirm: 'To Discord',
 				title: '🏳️‍🌈 Welcome to the 3rd dimension ⚧️',
 				body:
 					'Tetrahedron.gay is a mutual aid mental health group informally continuing the structured partial hospitalization Triangle Program.\n' +
@@ -33,11 +33,12 @@ export function CookieModal(
 					if (r) {
 						document.cookie = 'Tetrah=1; max-age=86400; path=/;';
 						console.log('new cookie: ' + getCookie('Tetrah'));
-						resolve(r);
+						window.open('https://discord.gg/uCkAuUpu9Y', '_self');
+						resolve(true);
 					} else {
-						// user declined, do not store cookie, take user to Triangle
-						reject(r);
-						window.open('https://hrihospital.com/programs-services/outpatient-services/partial-hospitalization-php/triangle-program-lgbtq/', '_self');
+						document.cookie = 'Tetrah=1; max-age=86400; path=/;';
+						console.log('new cookie: ' + getCookie('Tetrah'));
+						resolve(true);
 					}
 				}
 			};
